@@ -21,7 +21,7 @@ router.get('/notes', async (ctx, next) => {
 });
 
 router.post('/notes', async(ctx, next) => {
-  notes.push({...ctx.request.body, id: nanoid()});
+notes.push({text: ctx.request.body, id: nanoid()});
   ctx.response.status = 201;
 });
 
